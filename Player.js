@@ -7,11 +7,10 @@ export default class Player {
     this.canvas = canvas;
     this.velocity = velocity;
     this.bulletController = bulletController;
-
-    this.x = this.canvas.width / 2;
-    this.y = this.canvas.height - 75;
-    this.width = 50;
+    this.width = 50; //Needs to be defined before position to take it into account
     this.height = 48;
+    this.x = (this.canvas.width / 2) - (this.width / 2); //Starting position now accounts for player width
+    this.y = this.canvas.height - 75;
     this.image = new Image();
     this.image.src = "images/player.png";
 
