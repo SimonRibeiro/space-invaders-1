@@ -18,16 +18,11 @@ export default class Enemy {
     this.y += yVelocity;
   }
 
-  collideWith(sprite) {
-    if (
-      this.x + this.width > sprite.x &&
-      this.x < sprite.x + sprite.width &&
-      this.y + this.height > sprite.y &&
-      this.y < sprite.y + sprite.height
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+  reachBase(canvas) {
+      if (this.y + this.height > canvas.height - 75) { //Same pop-off as Player (make a variable ?)
+          return true;
+      } else {
+          return false;
+      }
   }
 }
