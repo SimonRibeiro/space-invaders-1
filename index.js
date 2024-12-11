@@ -55,8 +55,8 @@ function checkGameOver() {
     isGameOver = true;
   }
 
-  if (enemyController.collideWith(player)) {
-    isGameOver = true;
+  if (enemyController.reachBase(canvas)) {
+      isGameOver = true;
   }
 
   if (enemyController.enemyRows.length === 0) {
